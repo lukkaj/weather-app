@@ -8,9 +8,8 @@ const getWeatherFromApi = async () => {
     const response = await fetch(`${baseURL}/weather`);
     return response.json();
   } catch (error) {
-    // process.stdout.write(error);
-    // eslint-disable-next-line no-console
-    console.error(error);
+    process.stdout.write(error);
+    // console.error(error);
   }
   return {};
 };
@@ -20,8 +19,8 @@ const getForecastFromApi = async () => {
     const response = await fetch(`${baseURL}/forecast`);
     return response.json();
   } catch (error) {
-    // eslint-disable-next-line no-console
-    console.error(error);
+    process.stdout.write(error);
+    // console.error(error);
   }
 
   return {};

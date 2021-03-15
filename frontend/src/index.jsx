@@ -8,9 +8,10 @@ const getWeatherFromApi = async () => {
     const response = await fetch(`${baseURL}/weather`);
     return response.json();
   } catch (error) {
+    // process.stdout.write(error);
+    // eslint-disable-next-line no-console
     console.error(error);
   }
-
   return {};
 };
 
@@ -19,6 +20,7 @@ const getForecastFromApi = async () => {
     const response = await fetch(`${baseURL}/forecast`);
     return response.json();
   } catch (error) {
+    // eslint-disable-next-line no-console
     console.error(error);
   }
 
@@ -30,9 +32,9 @@ class Weather extends React.Component {
     super(props);
 
     this.state = {
-      icon: "",
-      forecastIcon: "",
-      time: "",
+      icon: '',
+      forecastIcon: '',
+      time: '',
     };
   }
 
@@ -40,27 +42,27 @@ class Weather extends React.Component {
     const weather = await getWeatherFromApi();
     const forecast = await getForecastFromApi();
     this.setState({
-      icon: weather.icon.slice(0, -1), 
+      icon: weather.icon.slice(0, -1),
       forecastIcon: forecast.weather.icon.slice(0, -1),
-      time: String(new Date(forecast.time))
+      time: String(new Date(forecast.time)),
     });
   }
 
   render() {
     const { icon, forecastIcon, time } = this.state;
-
     return (
       <div>
-        Current weather 
+        Current weather
         <div className="icon">
-          { icon && <img src={`/img/${icon}.svg`} /> }
+          { icon && <img alt="weather" src={`/img/${icon}.svg`} /> }
         </div>
 
-        <div className='icon'>
-          Two hours forecasted weather
-          <p>{time}
+        <div className="icon">
+          <p>
+            Weather at
+            {time}
           </p>
-          { icon && <img src={`/img/${forecastIcon}.svg`} /> }
+          { icon && <img alt="forecast" src={`/img/${forecastIcon}.svg`} /> }
         </div>
       </div>
     );
@@ -69,5 +71,5 @@ class Weather extends React.Component {
 
 ReactDOM.render(
   <Weather />,
-  document.getElementById('app')
+  document.getElementById('app'),
 );

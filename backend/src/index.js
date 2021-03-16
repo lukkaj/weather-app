@@ -40,7 +40,10 @@ router.get('/api/forecast', async function (ctx,) {
   const weatherData = await fetchForecast();
 
   ctx.type = 'application/json; charset=utf-8';
-  ctx.body = { weather: weatherData.list[1].weather[0], time: weatherData.list[1].dt_txt, };
+  ctx.body = {
+    weather: weatherData.list[1].weather[0],
+    time: weatherData.list[1].dt_txt,
+  };
 },);
 
 app.use(router.routes(),);

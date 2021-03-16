@@ -49,19 +49,35 @@ class Weather extends React.Component {
 
   render() {
     const { icon, forecastIcon, time } = this.state;
+    const weatherStyle = {
+      width: 50,
+      height: 50,
+      margin: 20,
+    };
     return (
       <div>
-        Current weather
         <div className="icon">
-          { icon && <img alt="weather" src={`/img/${icon}.svg`} /> }
-        </div>
-
-        <div className="icon">
-          <p>
-            Weather at
-            {time}
+          <p style={{
+            float: 'left',
+            fontSize: '8pt',
+            textAlign: 'left',
+            horizontalAlign: 'left',
+          }}
+          >
+            { icon && <img alt="weather" src={`/img/${icon}.svg`} style={weatherStyle} /> }
+            <h2> Current Weather in Helsinki </h2>
           </p>
-          { icon && <img alt="forecast" src={`/img/${forecastIcon}.svg`} /> }
+          <p style={{
+            float: 'left',
+            fontSize: '8pt',
+            textAlign: 'left',
+            horizontalAlign: 'left',
+          }}
+          >
+            { icon && <img alt="forecast" src={`/img/${forecastIcon}.svg`} style={weatherStyle} /> }
+            <h2> Forecasted weather in Helsinki </h2>
+            { time }
+          </p>
         </div>
       </div>
     );

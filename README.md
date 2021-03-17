@@ -7,55 +7,53 @@
 
 ### Get started
 
-First clone this project from GitHub with command `git clone https://github.com/lukkaj/weather-app`
+First clone this project from GitHub with the command `git clone https://github.com/lukkaj/weather-app`
 
-Second phase is to change current apikey to your apikey or use existing one. 
-Changing apikey is easy. First go to backend folder with command `cd backend`, and then 
-you can use `ls -a` command to see all files. Apikey can be changed to `.env` file by command `nano .env`,
-write your apikey or paste it with `ctrl + shift + v` and then save changes with `ctrl + s` 
+The second phase is to change the current API key to your API key or use an existing one. 
+Changing the API key is easy. First, go to the backend folder with the command `cd backend`, and then you can use `ls -a` command to see all files. Apikey can be changed to `.env` file by command `nano .env`,
+write your API key or paste it with `ctrl + shift + v` and then save changes with `ctrl + s` 
 and exit the editor `ctrl + x`
-Alternatively you can create new .env file with command `echo APPID = your apikey`.
+Alternatively, you can create a new .env file with the command `echo APPID = your API key`.
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ### Running the app
 
 #### Without docker
-Using the app witout docker can be done, but is more tedious and requires more manual work.
-Running have to be done to both back- and frontend folders simutaneusly by being in the folder and 
-typing `npm i && npm start`. After this open browser and type `http://localhost:8000` to see 
+Using the app without docker can be done, but is more tedious and requires more manual work.
+Running have to be done to both back- and frontend folders simultaneously by being in the folder and typing `npm i && npm start`. After this open browser and type `http://localhost:8000` to see 
 current weather and forecasted weather.
 
 #### With docker
-Application can be used with docker by running both backend and frontend while beign in those
+The application can be used with docker by running both backend and frontend while being in those
 folders. Docker can be run in the backend folder: `docker build -t weatherapp_backend . && docker 
 run --rm -i -p 9000:9000 –name weatherapp_backend -t weatherapp_backend` and when in frontend folder:
 `docker build -t weatherapp_frontend . && docker run --rm -i -p 8000:8000 --name weatherapp_frontend -t weatherapp_frontend`.
 Shutting down docker container can be done with commands `docker stop <container id> ` and container id 
-can be obtained with command `docker ps`
+can be obtained with the command `docker ps`
 
 #### With docker compose
-Easiest way of running the application is with docker compose. This can be done by command 
-`docker-compose up`  in the weather-app or the main folder. Backgroud running can be done with command `docker-compose up -d`.
+The easiest way of running the application is with docker-compose. This can be done by the command 
+`docker-compose up`  in the weather-app or the main folder. Background running can be done with the command `docker-compose up -d`.
 Docker-compose handles both backend and front end.
-Shutting down docker compose can be done with command: `docker-compose down`
+Shutting down docker-compose can be done with the command: `docker-compose down`
 
 ## Other tasks
 
 #### Hot reloading
-Hot reloading is enabled and for example can be witnessed when service is running by changing frontend’s index.jsx file row `35` `icon` to empty ``. 
-By doing this and saving changes in editor the `localhost:8000` becomes blank.
+Hot reloading is enabled and for example, can be witnessed when service is running by changing the frontend’s index.jsx file row `35` `icon` to empty ``. 
+By doing this and saving changes in the editor the `localhost:8000` becomes blank.
 
 #### Forecasted weather
-Back- and frontend codes are changed so that user can see weatherforecast from the `localgost:8000` site and the forecast is three hours in the future.
+Back- and frontend codes are changed so that the user can see weather forecast from the `localgost:8000` site and the forecast is three hours in the future.
 
 #### Eslint fixes
-Some parts of the code were against eslint rule and those are fixed.
+Some parts of the code were against the eslint's rules and those are fixed.
 
 ### Almost done
 
 #### Cloud deployment
-Cloud deployment is almost done and the app should be runnning on AWS public IPv4 3.21.122.34 address. Having problems with system's ports made this task difficult to accomplish.
+Cloud deployment is almost done and the app should be running on AWS public IPv4 3.21.122.34 address. Having problems with the system's ports made this task difficult to accomplish.
 
 ### To be done
 #### Ansible testing

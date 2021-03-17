@@ -57,7 +57,7 @@ Cloud deployment is almost done and the app should be running on AWS public IPv4
 
 ### To be done
 #### Ansible testing
-#### Geolocation to forecasting
+#### Geolocation for forecasting
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## Original readme

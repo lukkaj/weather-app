@@ -45,7 +45,7 @@ Hot reloading is enabled and for example, can be witnessed when service is runni
 By doing this and saving changes in the editor the `localhost:8000` becomes blank.
 
 #### Forecasted weather
-Back- and frontend codes are changed so that the user can see weather forecast from the `localgost:8000` site and the forecast is three hours in the future.
+Back- and frontend codes are changed so that the user can see weather forecast from the `localhost:8000` site and the forecast is three hours in the future.
 
 #### Eslint fixes
 Some parts of the code were against the eslint's rules and those are fixed.
